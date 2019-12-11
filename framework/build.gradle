@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode 1
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        //Room
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+
+        vectorDrawables.useSupportLibrary = true
+
+    }
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["androidx-appcompat"]
+    implementation rootProject.ext.dependencies["recyclerview"]
+    implementation rootProject.ext.dependencies["cardView"]
+    implementation rootProject.ext.dependencies["material"]
+    implementation rootProject.ext.dependencies["vectordrawable"]
+    implementation rootProject.ext.dependencies["vectordrawable-anim"]
+    implementation rootProject.ext.dependencies["constraintLayout"]
+    implementation rootProject.ext.dependencies["rxFastAndroidNetwork"]
+    implementation rootProject.ext.dependencies["room"]
+    annotationProcessor rootProject.ext.dependencies["room-compiler"]
+    implementation rootProject.ext.dependencies["calligraphy"]
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["gson"]
+    debugImplementation rootProject.ext.dependencies["debugDB"]
+    implementation rootProject.ext.dependencies["dagger"]
+    implementation rootProject.ext.dependencies["dagger-android-support"]
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    annotationProcessor rootProject.ext.dependencies["dagger-android-processor"]
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["swipeview"]
+//    implementation rootProject.ext.dependencies["timber"]
+    implementation rootProject.ext.dependencies["logger"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    testImplementation rootProject.ext.dependencies["mockito"]
+    testAnnotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    androidTestImplementation rootProject.ext.dependencies["espresso-core"]
+    androidTestImplementation rootProject.ext.dependencies["espresso-intents"]
+    androidTestImplementation rootProject.ext.dependencies["mockito"]
+    androidTestAnnotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    implementation rootProject.ext.dependencies["lifecycle-extensions"]
+    annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]
+
+//    implementation project(path:':framework')
+}

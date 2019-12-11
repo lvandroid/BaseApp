@@ -1,0 +1,86 @@
+ext {
+    android = [
+            // Sdk and tools
+            minSdkVersion    : 16,
+            targetSdkVersion : 29,
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.2",
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    version = [
+            supportLibraryVersion        : "1.1.0",
+            materialVersion              : "1.0.0",
+            constraintLayoutVersion      : "1.1.3",
+            vectorDrawableVersion        : "1.1.0",
+            animatedVectorDrawableVersion: "1.1.0",
+            gsonVersion                  : "2.8.6",
+            calligraphyVersion           : "3.1.1",
+            viewpumpVersion              : "2.0.3",
+            glideVersion                 : "3.7.0",
+            roomDatabaseVersion          : "2.2.0",
+            rx2FastAndroidNetworking     : "1.0.1",
+            dagger2Version               : "2.25.2",
+            rxjava2Version               : "2.2.15",
+            recyclerViewVersion          : "1.1.0",
+            cardViewVersion              : "1.0.0",
+
+            rxandroidVersion             : "2.1.1",
+            placeholderviewVersion       : "0.6.1",
+            debugDBVersion               : "1.0.3",
+            timberVersion                : "4.5.1",
+            loggerVersion                : "2.2.0",
+            lifecycleVersion             : "2.1.0",
+
+            // Test dependencies
+            junitVersion                 : "4.12",
+            espressoVersion              : "3.1.0",
+            mockitoVersion               : "2.15.0"
+    ]
+
+    dependencies = [
+            "androidx-appcompat"      : "androidx.appcompat:appcompat:${version["supportLibraryVersion"]}",
+            "recyclerview"            : "androidx.recyclerview:recyclerview:${version["recyclerViewVersion"]}",
+            "cardView"                : "androidx.cardview:cardview:${version["cardViewVersion"]}",
+            "material"                : "com.google.android.material:material:${version["materialVersion"]}",
+            "vectordrawable"          : "androidx.vectordrawable:vectordrawable:${version["vectorDrawableVersion"]}",
+            "vectordrawable-anim"     : "androidx.vectordrawable:vectordrawable-animated:${version["animatedVectorDrawableVersion"]}",
+            "constraintLayout"        : "androidx.constraintlayout:constraintlayout:${version["constraintLayoutVersion"]}",
+            //network
+            "rxFastAndroidNetwork"    : "com.amitshekhar.android:rx2-android-networking:${version["rx2FastAndroidNetworking"]}",
+            //database
+            "room"                    : "androidx.room:room-rxjava2:${version["roomDatabaseVersion"]}",
+            "room-compiler"           : "androidx.room:room-compiler:${version["roomDatabaseVersion"]}",
+            //font
+            "calligraphy"             : "io.github.inflationx:calligraphy3:${version["calligraphyVersion"]}",
+            "viewpump"                : "io.github.inflationx:viewpump:${version["viewpumpVersion"]}",
+            //image
+            "glide"                   : "com.github.bumptech.glide:glide:${version["glideVersion"]}",
+            //parser
+            "gson"                    : "com.google.code.gson:gson:${version["gsonVersion"]}",
+            // debug database
+            "debugDB"                 : "com.amitshekhar.android:debug-db:${version["debugDBVersion"]}",
+            // dependency injection
+            "dagger"                  : "com.google.dagger:dagger:${version["dagger2Version"]}",
+            "dagger-compiler"         : "com.google.dagger:dagger-compiler:${version["dagger2Version"]}",
+            "dagger-android-processor": "com.google.dagger:dagger-android-processor:${version["dagger2Version"]}",
+            "dagger-android-support"  : "com.google.dagger:dagger-android-support:${version["dagger2Version"]}",
+            //reactive
+            "rxjava"                  : "io.reactivex.rxjava2:rxjava:${version["rxjava2Version"]}",
+            "rxandroid"               : "io.reactivex.rxjava2:rxandroid:${version["rxandroidVersion"]}",
+            //swipe view
+            "swipeview"               : "com.mindorks:placeholderview:${version["placeholderviewVersion"]}",
+            "timber"                  : "com.jakewharton.timber:timber:${version["timberVersion"]}",
+            "logger"                  : "com.orhanobut:logger:${version["loggerVersion"]}",
+            "junit"                   : "junit:junit:${version["junitVersion"]}",
+            "mockito"                 : "org.mockito:mockito-core:${version["mockitoVersion"]}",
+            "espresso-core"           : "androidx.test.espresso:espresso-core:${version["espressoVersion"]}",
+            "espresso-intents"        : "androidx.test.espresso:espresso-intents:${version["espressoVersion"]}",
+
+            //viewModel
+            "lifecycle-extensions"    : "androidx.lifecycle:lifecycle-extensions:${version["lifecycleVersion"]}",
+            "lifecycle-compiler"      : "androidx.lifecycle:lifecycle-compiler:${version["lifecycleVersion"]}",
+    ]
+
+}
